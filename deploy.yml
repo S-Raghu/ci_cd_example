@@ -36,4 +36,3 @@ spec:
     port: 3000
     targetPort: http
     nodePort: 30000
-      
