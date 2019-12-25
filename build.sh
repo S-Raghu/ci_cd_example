@@ -4,6 +4,7 @@
 timestamp() {
     date +"%T"
 }
+
 #  tmep file for stderr redirects
 tmpfile=$(mktemp)
 
@@ -37,8 +38,14 @@ deploy() {
 echo "🤖    Welcome to The Builder v0.1."
 if [[ $1 = "build" ]]; then
     if [[ $2 = "docker" ]]; then
+      if [[ $3 = "deploy" ]]; then
         build
         buildDocker
+        deploy
+      else
+        build
+        buildDocker
+        fi
         echo "✔️        $(timestamp): complete"
         echo "👋        $(timestamp): exiting..."
     elif [[ $2 = "bin" ]]; then
@@ -49,7 +56,7 @@ if [[ $1 = "build" ]]; then
         echo "🤔        $(timestamp): missing build argument"
     fi
 else
-    if [[ $1 == "--help"]]; then
+    if [[ $1 == "--help" ]]; then
         echo "build - start a build to produce artifacts"
         echo "docker - produces docker images"
         echo "bin - produces executable binaries"
