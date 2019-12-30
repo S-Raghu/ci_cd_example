@@ -5,7 +5,7 @@ timestamp() {
     date +"%T"
 }
 
-#  tmep file for stderr redirects
+#  temp file for stderr redirects
 tmpfile=$(mktemp)
 
 # go build
@@ -35,7 +35,7 @@ deploy() {
 }
 
 # orchestrate
-echo "🤖    Welcome to The Builder v0.1."
+echo "🤖    Welcome to The Builder v0.1.0"
 if [[ $1 = "build" ]]; then
     if [[ $2 = "docker" ]]; then
       if [[ $3 = "deploy" ]]; then
