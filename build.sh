@@ -30,7 +30,7 @@ buildDocker() {
 deploy() {
     echo "🌧️        $(timestamp): delploying to minikube"
     kubectl delete deployment example
-    kubectl delete service exmaple
+    kubectl delete service example
     kubectl apply -f deploy.yml
 }
 
