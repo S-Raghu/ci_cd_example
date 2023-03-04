@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: example
-          image: "example:test"
+          image: raghu486.azurecr.io/example-test
           ports:
             - name: http
               containerPort: 3000
