@@ -4,7 +4,7 @@ RUN apk update && apk add --no-cache git
 RUN mkdir /build
 ADD . /build
 WORKDIR /build
-RUN go get -d -v
+RUN go install -d -v
 RUN go build -o cicdexample
 # Step 2
 FROM alpine
